@@ -1,0 +1,5 @@
+source('./init-decay.R')
+source('./simulateProgressionsUpdated.R')
+source('./loadDataForPlots.R')
+source('./paperPlotsUpdated.R')
+source('./matchCIs_updated2.R')

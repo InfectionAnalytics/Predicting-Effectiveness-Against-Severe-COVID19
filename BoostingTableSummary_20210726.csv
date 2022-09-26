@@ -1,0 +1,8 @@
+﻿PaperNumber,Firstauthor,Journal,ReferenceGroup,Reference,ReferenceLevel,Booster,BoostedLevel,FoldChange,Notes,PreviousImmune
+1,Anicini,New England Journal of Medicine ,Naïve Pfizer,Pfizer,118,Pfizer,569,4.822033898,,Convalescent
+2,Leier,,Naïve Pfizer,Pfizer,578.6,Pfizer,1955,3.378845489,Average all variants which are not sig dif. 4.947275,Convalescent
+4,Stamatatos,Science,Naïve Moderna/Pfizer,Pfizer/Moderna,,Pfizer/Moderna,,5,,Convalescent
+7,Goel,Science Immunology,Naïve Moderna/Pfizer,Pfizer/Moderna,559.3019889,Pfizer/Moderna,5120,9.154267464,,Convalescent
+10,Lucas,MedRxiv,Naïve Moderna/Pfizer,Pfizer/Moderna,144.163118,Pfizer/Moderna,281.8382931,1.954995821,,Convalescent
+24,Wu,MedRxiv,Naïve Moderna,Moderna,1870,Moderna,4588,2.453475936,Reference from another paper (https://www.biorxiv.org/content/10.1101/2021.06.28.449914v1),Moderna
+25,Pan,MedRxiv,Naïve CoronaVac,CoronaVac,28.2,CoronaVac,137.9,4.890070922,Using the 14 days between first two doses regimen as that is what in nature med,CoronaVac
