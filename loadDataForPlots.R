@@ -62,18 +62,18 @@ levels(rw_matched_symptsev_data$regime) =  c('AD26 only','ChAd-Ox only','BNT162b
 
 
 # Add in 95% CIs of progression
-niter = 50000
+#niter = 50000
 rw_matched_symptsev_data$prog_protect_low=NA
 rw_matched_symptsev_data$prog_protect_high=NA
 for (p in c(1:nrow(rw_matched_symptsev_data))){
   if (sum(is.na(c(rw_matched_symptsev_data[p,'SymptomaticEff'],rw_matched_symptsev_data[p,'SymptomaticMin'],rw_matched_symptsev_data[p,'SymptomaticMax'])))==0){
     symptSD = estimate_sd_from_CIs(rw_matched_symptsev_data[p,'SymptomaticEff'],rw_matched_symptsev_data[p,'SymptomaticMin'],rw_matched_symptsev_data[p,'SymptomaticMax'])
   } else {symptSD=0}
-  symptEffs = rnorm(niter,rw_matched_symptsev_data[p,'SymptomaticEff'],symptSD)
+  symptEffs = rnorm(nruns,rw_matched_symptsev_data[p,'SymptomaticEff'],symptSD)
   if (sum(is.na(c(rw_matched_symptsev_data[p,'SevereEff'],rw_matched_symptsev_data[p,'SevereMin'],rw_matched_symptsev_data[p,'SevereMax'])))==0){
     severeSD = estimate_sd_from_CIs(rw_matched_symptsev_data[p,'SevereEff'],rw_matched_symptsev_data[p,'SevereMin'],rw_matched_symptsev_data[p,'SevereMax'])
   } else {severeSD=0}
-  severeEffs = rnorm(niter,rw_matched_symptsev_data[p,'SevereEff'],severeSD)
+  severeEffs = rnorm(nruns,rw_matched_symptsev_data[p,'SevereEff'],severeSD)
   progression_protections = 100-100*(100-severeEffs)/(100-symptEffs)
   rw_matched_symptsev_data[p,c('prog_protect_low','prog_protect_high')]=quantile(progression_protections, probs = c(.025,.975),na.rm=T)
   #protect_CI_width

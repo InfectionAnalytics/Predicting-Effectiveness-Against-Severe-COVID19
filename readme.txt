@@ -27,7 +27,7 @@ We run the following files (in this order)
   requires:
       plot_efficacies_revised.R  (which in turn requires ab_efficacy_estimates.R, natmed_parameters.RData and efficacies.RDS)
       load_bootstrap_parameter_distributions.R
-4) Make plots that are used in the manuscript: paperPlotsUpdated.R 
+4) Do regression (line 156) and make plots that are used in the manuscript: paperPlotsUpdated.R 
   requires:
       load_bootstrap_parameter_distributions.R
 5) Generate the CI intervals and statistics for the manuscript: matchCIs_updated2.R
