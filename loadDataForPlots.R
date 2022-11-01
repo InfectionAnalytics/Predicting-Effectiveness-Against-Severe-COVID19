@@ -14,7 +14,17 @@ rw_unboosted_data = imported_efficacy_data %>%
     CI_width = pmin(EfficacyMax-EfficacyMin,100))
 
 rw_unboosted_data$CI_width[is.na(rw_unboosted_data$CI_width)]=0
-rw_unboosted_symptsev_data = filter(rw_unboosted_data, EndpointCat %in% c('Symptomatic','Severe'))
+# Make sure values are above 0 and below 100
+fit_between_0_100 <- function(x){
+  case_when(x<0 ~0,
+            x>100~100,
+            T~x)
+}
+rw_unboosted_symptsev_data = filter(rw_unboosted_data, EndpointCat %in% c('Symptomatic','Severe')) %>%
+  mutate(Efficacy = fit_between_0_100(Efficacy),
+         EfficacyMin = fit_between_0_100(EfficacyMin), 
+         EfficacyMax = fit_between_0_100(EfficacyMax)
+  )
 
 
 # Load the data we have simulated previously

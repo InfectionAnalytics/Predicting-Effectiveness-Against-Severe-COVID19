@@ -45,7 +45,7 @@ manuscriptfiguresdir = './Figures/'
 
 #setwd(basedir)
 plot_type='pdf'
-effdatasheet= 'EfficacyDataCombined'
+effdatasheet= 'EfficacyDataCombined_added'
 effdatarange= 'A1:X1000'
 
 neutdatasheet= 'NeutDecayDataCombined'
@@ -136,7 +136,7 @@ study_shapes_neut = c('DECAY06'=19, 'DECAY07'=15,'DECAY09'=16, 'DECAY10'=17, 'DE
 efficacy_data = import_efficacy_data()
 #neut_data = import_neut_data()
 
-study_shapes_eff = c(11,12,13,14,15,16,17,18,0,1,2,5,6,7,8,9,10,35,37,94,64,36,38)
+study_shapes_eff = c(11,12,13,14,15,16,17,18,0,1,2,5,6,7,8,9,10,35,25,3,4,36,38)
 #shapes = c(21:25,21:25)
 FirstAuthors = unique(efficacy_data$FirstAuthor)
 names(study_shapes_eff) = paste0(FirstAuthors,' et. al.')
